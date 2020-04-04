@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Lancy.Dev.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Lancy.Dev.Web.Models;
 
 namespace Lancy.Dev.Web.Controllers
 {

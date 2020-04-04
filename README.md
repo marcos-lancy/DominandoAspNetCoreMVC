@@ -21,6 +21,9 @@ EntityFrameqoekCore.SqlServer;
 OBD: Para gerar o arquivo Sql separado do migration.
 PS: Comando para gerar o sql 'Script-Migration -Context MeuDbContext' e 'Script-Migration -Context ApplicationDbContext'
 
+AutoMapper.Extensions.Microsoft.DependencyInjection
+[automapper](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/)
+
 ### Arquivo SQL
 Caso queria o Sql ao invez do migration, o mesmo esta dentro da em /sql
 

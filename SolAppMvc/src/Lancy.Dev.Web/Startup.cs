@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Lancy.Dev.Business.Interfaces;
+using Lancy.Dev.Data.Context;
+using Lancy.Dev.Data.Repository;
+using Lancy.Dev.Web.Data;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Lancy.Dev.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Lancy.Dev.Data.Context;
-using Lancy.Dev.Business.Interfaces;
-using Lancy.Dev.Data.Repository;
 
 namespace Lancy.Dev.Web
 {
@@ -49,6 +45,8 @@ namespace Lancy.Dev.Web
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

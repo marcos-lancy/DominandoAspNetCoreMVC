@@ -1,6 +1,6 @@
 using System;
 
-namespace Lancy.Dev.Web.Models
+namespace Lancy.Dev.Web.ViewModels
 {
     public class ErrorViewModel
     {
