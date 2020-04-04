@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Lancy.Dev.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Lancy.Dev.Data.Context;
 
 namespace Lancy.Dev.Web
 {
@@ -35,9 +36,14 @@ namespace Lancy.Dev.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Connection Identity
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Connection Padrão 
+            services.AddDbContext<MeuDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

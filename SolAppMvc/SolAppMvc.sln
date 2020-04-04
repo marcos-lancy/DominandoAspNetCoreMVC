@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lancy.Dev.Web", "src\Lancy.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Business", "2 - Business", "{1058C316-278B-4EDB-B773-AFF2D7EA69E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lancy.DevBusiness", "src\Lancy.DevBusiness\Lancy.DevBusiness.csproj", "{EC609E3A-16E0-42DF-92DE-C7E8B5F78EC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lancy.Dev.Business", "src\Lancy.DevBusiness\Lancy.Dev.Business.csproj", "{EC609E3A-16E0-42DF-92DE-C7E8B5F78EC6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{4FE6718C-0238-4345-BE6E-2A161100E111}"
 EndProject
