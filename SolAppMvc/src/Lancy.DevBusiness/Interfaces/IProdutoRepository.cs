@@ -8,8 +8,8 @@ namespace Lancy.Dev.Business.Interfaces
 {
     public interface IProdutoRepository : IRepository<Produto>
     {
-        Task<IEnumerable<Produto>> ObterProdutoPorFornecedor(Guid fornecedorId);
-        Task<IEnumerable<Produto>> ObterProdutosFornecedores(Guid fornecedorId);
-        Task<Produto> ObterprodutoFornecedor(Guid id);
+        Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId);
+        Task<IEnumerable<Produto>> ObterProdutosFornecedores();
+        Task<Produto> ObterProdutoFornecedor(Guid id);
     }
 }
