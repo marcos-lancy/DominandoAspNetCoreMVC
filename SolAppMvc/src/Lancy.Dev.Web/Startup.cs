@@ -14,6 +14,8 @@ using Lancy.Dev.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Lancy.Dev.Data.Context;
+using Lancy.Dev.Business.Interfaces;
+using Lancy.Dev.Data.Repository;
 
 namespace Lancy.Dev.Web
 {
@@ -49,6 +51,11 @@ namespace Lancy.Dev.Web
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddScoped<MeuDbContext>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

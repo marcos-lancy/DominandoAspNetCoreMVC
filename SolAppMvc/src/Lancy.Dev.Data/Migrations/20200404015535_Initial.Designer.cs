@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lancy.Dev.Data.Migrations
 {
-    [DbContext(typeof(MeuDbContext))]
+    [DbContext(typeof(IprodutoRepository))]
     [Migration("20200404015535_Initial")]
     partial class Initial
     {

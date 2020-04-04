@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lancy.Dev.Data.Migrations
 {
-    [DbContext(typeof(MeuDbContext))]
+    [DbContext(typeof(IprodutoRepository))]
     partial class MeuDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -5,7 +5,7 @@ Projeto criado para desenvolver skills em Asp.Net Core.
 ## Observação important
 
 Foi forçado no arquivo 'global.json' a versão sdk. Isso 'trava' a aplicação para usar apenas essa versão. Dessa forma, se tem mais controle na versão que o projeto se encontra.
-Para baixar e subir o projeto, sera preciso ter a versão "3.1.201" ou adaptar a versão editando o arquivo para a versão desejada. Lembrando que editando a versão, pode ocorrer erros de compatibilidades, tente ficar em 3.x.
+Para baixar o projeto e compilar, sera preciso ter a versão "3.1.201" ou adaptar a versão editando o arquivo para a versão desejada. Lembrando que editando a versão, pode ocorrer erros de compatibilidades, tente ficar em 3.x.
 
 ### Libs e links
 Fluent API para mapeamentos;
@@ -18,7 +18,7 @@ Entity Frameword Core;
 
 EntityFrameqoekCore.SqlServer;
 [SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/2.2.6)
-OBD: Para gerar o arquivo Sql separado do migrtion.
+OBD: Para gerar o arquivo Sql separado do migration.
 PS: Comando para gerar o sql 'Script-Migration -Context MeuDbContext' e 'Script-Migration -Context ApplicationDbContext'
 
 ### Arquivo SQL
