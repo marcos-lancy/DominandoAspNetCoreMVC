@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Lancy.Dev.Web.Extensios;
 using Microsoft.AspNetCore.Http;
 
 namespace Lancy.Dev.Web.ViewModels
@@ -26,6 +27,7 @@ namespace Lancy.Dev.Web.ViewModels
 
         public string Imagem { get; set; }
         
+        [Moeda]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
 
