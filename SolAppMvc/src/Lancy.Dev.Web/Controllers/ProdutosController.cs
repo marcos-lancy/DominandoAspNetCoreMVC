@@ -26,13 +26,13 @@ namespace Lancy.Dev.Web.Controllers
             _fornecedorRepository = fornecedorRepository;
         }
 
-        
+        [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
-        
+        [Route("dados-do-produtos/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -45,7 +45,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
-        
+        [Route("novo-produtos")]
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
@@ -53,7 +53,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
-        
+        [Route("novo-produtos")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
@@ -73,8 +73,8 @@ namespace Lancy.Dev.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-               
 
+        [Route("editar-produtos/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -87,7 +87,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
-
+        [Route("editar-produtos/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
@@ -122,7 +122,7 @@ namespace Lancy.Dev.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [Route("excluir-produtos/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -131,7 +131,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
-
+        [Route("excluir-produtos/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
