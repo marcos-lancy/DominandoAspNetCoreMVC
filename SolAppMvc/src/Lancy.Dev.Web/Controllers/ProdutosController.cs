@@ -35,7 +35,7 @@ namespace Lancy.Dev.Web.Controllers
         
         public async Task<IActionResult> Details(Guid id)
         {
-            var produtoViewModel = ObterProduto(id);
+            var produtoViewModel = await ObterProduto(id);
 ;
             if (produtoViewModel == null)
             {
