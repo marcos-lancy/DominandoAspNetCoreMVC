@@ -19,4 +19,9 @@
     <ProjectReference Include="..\Lancy.Dev.Data\Lancy.Dev.Data.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\imagens\" />
+  </ItemGroup>
+
 </Project>
