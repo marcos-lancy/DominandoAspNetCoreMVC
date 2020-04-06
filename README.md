@@ -42,6 +42,7 @@ OBS: Será necessário gerar migration para ambos os contexts 'MeuDbContext' e '
 4. Update-Database -Context ApplicationDbContext
 
 ## Algumas imagens
+<img src="img/lista-de-produtos.PNG" width="400">
 <img src="img/editar-endereco.PNG" width="400">
 <img src="img/cadastro-produto.PNG" width="400">
 <img src="img/editar-fornecedor.PNG" width="400">
