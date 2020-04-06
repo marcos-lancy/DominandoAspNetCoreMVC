@@ -16,7 +16,7 @@ OBS: Farei uso do complemento Relational em uso no fluent.
 Entity Frameword Core;
 [entity](https://docs.microsoft.com/pt-br/ef/core/)
 
-EntityFrameqoekCore.SqlServer;
+EntityFrameworkCore.SqlServer;
 [SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/2.2.6)
 OBD: Para gerar o arquivo Sql separado do migration.
 PS: Comando para gerar o sql 'Script-Migration -Context MeuDbContext' e 'Script-Migration -Context ApplicationDbContext'
@@ -40,3 +40,12 @@ OBS: Será necessário gerar migration para ambos os contexts 'MeuDbContext' e '
 
 3. Update-Database -Context MeuDbContext
 4. Update-Database -Context ApplicationDbContext
+
+## Algumas imagens
+<img src="img/editar-endereco.PNG" width="400">
+<img src="img/cadastro-produto.PNG" width="400">
+<img src="img/editar-fornecedor.PNG" width="400">
+<img src="img/celular01.PNG" heigth="300">
+
+ - Todas as imagens usadas são do site [casa do codigo](https://www.casadocodigo.com.br/), todos os valores e textos que usei, são ilustrativos e não existe qualquer tivo de realidade.
+
