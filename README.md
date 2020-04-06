@@ -24,6 +24,9 @@ PS: Comando para gerar o sql 'Script-Migration -Context MeuDbContext' e 'Script-
 AutoMapper.Extensions.Microsoft.DependencyInjection
 [automapper](https://www.nuget.org/packages/AutoMapper.Extensions.Microsoft.DependencyInjection/)
 
+FluenteValidatin
+[fluent](https://fluentvalidation.net/)
+
 ### Arquivo SQL
 Caso queria o Sql ao invez do migration, o mesmo esta dentro da em /sql
 
