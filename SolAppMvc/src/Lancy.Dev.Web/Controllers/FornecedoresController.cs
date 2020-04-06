@@ -65,6 +65,7 @@ namespace Lancy.Dev.Web.Controllers
             if (!ModelState.IsValid) return View(fornecedorViewModel);
 
             await _fornecedorService.Adicionar(_mapper.Map<Fornecedor>(fornecedorViewModel));
+            if (!OperacaoValida()) return View(fornecedorViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -93,7 +94,8 @@ namespace Lancy.Dev.Web.Controllers
             if (!ModelState.IsValid) return View(fornecedorViewModel);
 
             await _fornecedorService.Atualizar(_mapper.Map<Fornecedor>(fornecedorViewModel));
-            
+            if (!OperacaoValida()) return View(await ObterFornecedorProdutosEndereco(id));
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -119,6 +121,7 @@ namespace Lancy.Dev.Web.Controllers
             if (fornecedorViewModel == null) return NotFound();
 
             await _fornecedorService.Remover(id);
+            if (!OperacaoValida()) return View(fornecedorViewModel);
 
             return RedirectToAction(nameof(Index));
         }
@@ -161,6 +164,8 @@ namespace Lancy.Dev.Web.Controllers
             if(!ModelState.IsValid) return PartialView("_AtualizarEndereco", fornecedorViewModel);
 
             await _fornecedorService.AtualizarEndereco(_mapper.Map<Endereco>(fornecedorViewModel.Endereco));
+
+            if (!OperacaoValida()) return PartialView("_AtualizarEndereco", fornecedorViewModel);
 
             var url = Url.Action("ObterEndereco", "Fornecedores", new { id = fornecedorViewModel.Endereco.FornecedorId });
             return Json(new { success = true, url });
