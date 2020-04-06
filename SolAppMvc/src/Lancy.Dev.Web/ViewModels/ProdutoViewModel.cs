@@ -23,6 +23,7 @@ namespace Lancy.Dev.Web.ViewModels
         public string Descricao { get; set; }
 
         [DisplayName("Imagem do Produto")]
+        [NotMappedAttribute]
         public IFormFile ImagemUpload { get; set; }
 
         public string Imagem { get; set; }

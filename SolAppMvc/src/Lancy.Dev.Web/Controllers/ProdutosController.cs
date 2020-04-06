@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Lancy.Dev.Business.Interfaces;
 using Lancy.Dev.Business.Models;
+using Lancy.Dev.Web.Extensios;
 using Lancy.Dev.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Lancy.Dev.Web.Controllers
 {
+    [Authorize]
     public class ProdutosController : BaseController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -31,12 +34,14 @@ namespace Lancy.Dev.Web.Controllers
             _produtoService = produtoService;
         }
 
+        [AllowAnonymous]
         [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
+        [AllowAnonymous]
         [Route("dados-do-produtos/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
@@ -50,6 +55,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto","Adicionar")]
         [Route("novo-produtos")]
         public async Task<IActionResult> Create()
         {
@@ -58,6 +64,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produtos")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -81,6 +88,7 @@ namespace Lancy.Dev.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -94,6 +102,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produtos/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -131,6 +140,7 @@ namespace Lancy.Dev.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -140,6 +150,7 @@ namespace Lancy.Dev.Web.Controllers
             return View(produtoViewModel);
         }
 
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produtos/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
